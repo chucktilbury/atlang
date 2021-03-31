@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Turn building the tests on or off. Default is off.
 
-if [ -z $ALANG_ROOT_DIR ]; then
+if [ -z $ATLANG_ROOT_DIR ]; then
     echo "error: Environment not set up. Run setup."
     exit
 fi
@@ -12,6 +12,6 @@ elif [ "$1" != "on" -a "$1" != "off" ]; then
     echo "error: Acceptible parameters are 'on' and 'off' "
     exit
 else
-    cd $ALANG_ROOT_DIR/build
+    cd $ATLANG_ROOT_DIR/build
     cmake -DBUILD_TEST=$1 ..
 fi

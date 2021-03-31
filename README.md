@@ -1,22 +1,22 @@
-# Plang
-This is the repository for the **Plang** language. The **Plang** language is a mixture of several languages, including C and Python. It is a simple translator that accepts **Plang** and translates it to C. Some other iteration of the language may use LLVM to generate code. This will never be an interpreted language system.
+# ATlang
+This is the repository for the **ATlang** language. The **ATlang** language is a mixture of several languages, including C and Python. It is a simple translator that accepts **ATlang** and translates it to C. Some other iteration of the language may use LLVM to generate code. This will never be an interpreted language system.
 
 ## Why?
-The reasons for implementing **Plang** are very simple. I love programming languages and I love writing code. I have always wanted to create a language from scratch and then write a bunch of code in it. I have made numerous attempts, and as of February 2021, this is the latest one.
+The reasons for implementing **ATlang** are very simple. I love programming languages and I love writing code. I have always wanted to create a language from scratch and then write a bunch of code in it. I have made numerous attempts, and as of February 2021, this is the latest one.
 
 ## Goals
-* **Plang** is object oriented. Only classes are used to implement functionality.
-* **Plang** is strongly typed but also allows robust casting.
-* **Plang** has garbage collection.
-* **Plang** does not have pointers or NULL values.
-* **Plang** supports maps, dictionaries, and lists natively.
-* **Plang** has a simplified native type system that supports ints, uints, floats, bools, and strings natively.
-* **Plang** follows the notion of having as few keywords and operators as possible, while still being able to implement complex programs. It is intended to be a application language, rather than a system language that has things like bitwise operations.
-* **Plang** follows the notion of having a clear and obvious way to do something. There may be more than one semantic paths, but that stems from making a choice to put in optional elements or leave them out. It's intended to be as simple as possible, but no simpler.
+* **ATlang** is object oriented. Only classes are used to implement functionality.
+* **ATlang** is strongly typed but also allows robust casting.
+* **ATlang** has garbage collection.
+* **ATlang** does not have pointers or NULL values.
+* **ATlang** supports maps, dictionaries, and lists natively.
+* **ATlang** has a simplified native type system that supports ints, uints, floats, bools, and strings natively.
+* **ATlang** follows the notion of having as few keywords and operators as possible, while still being able to implement complex programs. It is intended to be a application language, rather than a system language that has things like bitwise operations.
+* **ATlang** follows the notion of having a clear and obvious way to do something. There may be more than one semantic paths, but that stems from making a choice to put in optional elements or leave them out. It's intended to be as simple as possible, but no simpler.
 
 ## Syntax
 
-The following is a list of diagrams that show the whole syntax of **Plang**. The only thing that is not shown in the diagrams is the contents of terminal objects such as comments, symbols, strings, and numbers. The intention is to demonstrate the workings of the parser, not the scanner.
+The following is a list of diagrams that show the whole syntax of **ATlang**. The only thing that is not shown in the diagrams is the contents of terminal objects such as comments, symbols, strings, and numbers. The intention is to demonstrate the workings of the parser, not the scanner.
 
 ![term-nterm](docs/pics/term-nterm.jpg)
 
@@ -125,7 +125,7 @@ The default destructor is normally all that is required, since the garbage colle
 
 ## Exception Handling
 
-Exceptions are simplified and only allow for a string to be sent to a single handler. The ```raise``` keyword accepts a single parameter of a formatted string. This is aimed at reporting errors more than actually trying to fix them. So exceptions in **Plang** are an error handling mechanism and not a flow control mechanism.  All of the usual signals in a UNIX-like environment are handled as exceptions and a reasonable string string is generated for them. For things like errors when opening files, the runtime code generates an exception and an appropriate string and raises the exception.
+Exceptions are simplified and only allow for a string to be sent to a single handler. The ```raise``` keyword accepts a single parameter of a formatted string. This is aimed at reporting errors more than actually trying to fix them. So exceptions in **ATlang** are an error handling mechanism and not a flow control mechanism.  All of the usual signals in a UNIX-like environment are handled as exceptions and a reasonable string string is generated for them. For things like errors when opening files, the runtime code generates an exception and an appropriate string and raises the exception.
 
 Example:
 

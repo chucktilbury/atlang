@@ -41,7 +41,7 @@ static void repl() {
 
     bool finished = false;
 
-    printf("\nalang v0.1 REPL interface. (Ctrl-D to exit)\n\n");
+    printf("\natlang v0.1 REPL interface. (Ctrl-D to exit)\n\n");
     rl_bind_key('\t', rl_insert);
 
     char* buf;

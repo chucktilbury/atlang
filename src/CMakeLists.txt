@@ -1,8 +1,8 @@
-project(alang)
+project(at)
 
 #set(CMAKE_VERBOSE_MAKEFILE ON)
 add_executable(${PROJECT_NAME}
-    alang.c
+    atlang.c
     log.c
     scanner.c
     memory.c
@@ -34,4 +34,3 @@ target_include_directories(${PROJECT_NAME}
 target_compile_options(${PROJECT_NAME}
     PRIVATE "-Wall" "-Wextra" "-g" "-D_USE_LOGGING" "--std=c99"
     )
-
