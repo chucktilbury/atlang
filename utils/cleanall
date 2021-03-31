@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+if [ ! -z $ALANG_ROOT_DIR ]; then
+
+    cd $ALANG_ROOT_DIR/build
+    make clean
+
+    cd $ALANG_ROOT_DIR
+    if [ -d $ALANG_ROOT_DIR/bin ]; then
+        rm -rf $ALANG_ROOT_DIR/bin
+    fi
+
+    if [ -d $ALANG_ROOT_DIR/test/bin ]; then
+        rm -rf $ALANG_ROOT_DIR/test/bin
+    fi
+
+    if [ -d $ALANG_ROOT_DIR/build ]; then
+        rm -rf $ALANG_ROOT_DIR/build
+    fi
+else
+    echo "error: alang environment not set"
+fi

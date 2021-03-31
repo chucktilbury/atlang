@@ -1,0 +1,40 @@
+This is a todo list. I keep track of bugs and action items in this file.
+
+1. Add dict, map, and list references. They are missing from all data references.
+2. (done)Create the document and add the graphics.
+3. Implement type casts early and change the code so that type conversions for
+    comparisons and arithmetic use it.
+4. Unify values and objects to facilitate calling methods on constant values.
+
+---
+1. (done)Fix scanner so that it can read from a string or a file, on demand.
+2. (done)Get REPL working.
+3. Add meta commands such as disassemble and import. Study up on GDB to see what
+    features should be added.
+    * partly done. Added the logical support.
+    * disassemble between 2 addresses.
+    * single step
+    * tie the opcodes to a source code line.
+    * watches and breakpoints
+4. (done) When in REPL mode, the VM stack should be cleared after executing a line.
+    * It is still a question whether this is a good idea.
+
+Bugs:
+0. (done) Make the VM use the same value stack and code block as the rest of the code,
+    so that when the VM kills itself, it does not double free.
+1. Program will not end if more than one REPL expression is entered.
+2. Code block is reset instead of appended to. Old code block not getting deleted?
+    How does code block get appended? Needs some thought.
+3. Single number causes double free abort when program ends in destroy vmachine.
+4. Syntax errors for symbols that are not part of an expression do not generate
+    an error. They just generate a return and continue.
+
+5. Do not convert values other than what C does. All converted values are made
+    by using explicit casts.
+    * If either operand is double, then the the other is converted to double
+        as well. If the other operand is unsigned, then it is converted to
+        signed, and then to double.
+    * If either operand is signed int and not double, then the other is
+        converted to a signed int.
+    * All other conversions, such as int to string are denied and can be made
+        with an explicit cast.

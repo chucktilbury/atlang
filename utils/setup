@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+if [ $(basename $PWD) != "alang" ]; then
+    echo "This script must be run in the alang directory"
+    exit
+fi
+
+if [ -z $ALANG_ROOT_DIR ]; then
+    if [ ! -d build ]; then
+        mkdir build
+    fi
+    export ALANG_ROOT_DIR=$PWD
+    export PATH=$ALANG_ROOT_DIR/bin:$ALANG_ROOT_DIR/utils:$PATH
+    bash --init-file <( echo "source $HOME/.bashrc; cd $ALANG_ROOT_DIR/build; cmake ..; PS1='(alang) \u@\h:\w \$ '")
+else
+    cd $ALANG_ROOT_DIR
+    if [ ! -d build ]; then
+        mkdir build
+    fi
+    cd build
+    cmake ..
+fi
+

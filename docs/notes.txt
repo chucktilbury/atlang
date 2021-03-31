@@ -1,0 +1,15 @@
+
+Development notes. This helps me remember what I have done and why.
+
+Chapter 17.
+I have the calculator completely working, except for a couple of bugs.
+* Moved all of the data storage for the running program into the VM.
+
+Chapter 18.
+* Adding values for bool and nil.
+* Adding boolean expressions.
+
+Chapter 19.
+* Adding strings.
+* Disable automatic casting of strings. This will be added later as an
+    explicit cast.
